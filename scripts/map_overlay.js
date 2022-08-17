@@ -212,6 +212,83 @@ window.onload = function () {
     }
   }
 
+  // const load_async = async (url) => {
+  //   console.log("HERE");
+
+  //   fetch(url)
+  //     .then((response) => response.arrayBuffer())
+  //     .then((arrayBuffer) => {
+  //       parseGeoraster(arrayBuffer).then((georaster) => {
+  //         console.log("georaster:", georaster);
+
+  //         var layer = new GeoRasterLayer({
+  //           georaster: georaster,
+  //           //opacity: 0.7,
+  //           // if the temperature value is > -100, specify color
+  //           // #00000000 is the hex color code for transparent
+  //           // the am range is 62-68
+  //           // the pm range is 94-105.9
+  //           // make these have the same number of colors in their colormaps
+  //           pixelValuesToColorFn: (values) => {
+  //             let mappedColors = values.map(function (value) {
+  //               if (value <= 0) {
+  //                 return "#00000000";
+  //               } else {
+  //                 return "#a50026"; // red
+  //               }
+  //             });
+  //             return mappedColors;
+  //           },
+  //           resolution: 256,
+  //         });
+  //         console.log("layer:", layer);
+  //         // add point and polygon data to aggregate layer
+  //         var overlayMaps = {
+  //           "City Limits": cityLimits,
+  //           "Tree Canopy": layer,
+  //         };
+
+  //         // can we make these layers scrollable or nestable
+  //         var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+  //       });
+  //     });
+
+  //   };
+
+  // var url_to_geotiff_file = "../data/ABQ_NAIP2016_Canopy_v01b_filter.tif";
+  // load_async(url_to_geotiff_file);
+  // document.getElementById("geotiff-file").addEventListener("change", function(event) {
+  //   //var file = new File([""], "am_heat_index_f_ranger.tif", { name: "am_heat_index_f_ranger.tif", lastModified: 1629508376000, webkitRelativePath: "", size: 21053319, type: "image/tiff" });
+  //   console.log("HERE!!!");
+  //   var fileOnLoad = event.target.files[0];
+  //   //console.log("file:", file);
+  //   console.log("fileOnLoad:", fileOnLoad);
+  //   var reader = new FileReader();
+  //   reader.readAsArrayBuffer(fileOnLoad);
+  //   reader.onloadend = function() {
+  //     var arrayBuffer = reader.result;
+  //     parseGeoraster(arrayBuffer).then(georaster => {
+  //       console.log("georaster:", georaster);
+  //       var layer = new GeoRasterLayer({
+  //           georaster: georaster,
+  //           pixelValuesToColorFn: (values) => {
+  //             let mappedColors = values.map(function(value) {
+  //               if(value <= 0) {
+  //                 return '#00000000';
+  //               } else {
+  //                 return '#a50026'; // red
+  //               }
+  //             });
+  //             return mappedColors;
+  //           },
+  //           resolution: 256
+  //       });
+  //       console.log("layer:", layer);
+
+  //     });
+  //   };
+  // });
+
   // **** CONTROLS ****
   // combine basemaps and map overlays
   var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
